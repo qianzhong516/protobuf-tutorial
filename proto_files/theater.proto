@@ -1,0 +1,12 @@
+syntax = "proto3";
+package tutorial;
+option java_package = "com.tutorialspoint.greeting";
+
+message Theater {
+    string name = 1;
+    string adderss = 2;
+}
+
+message Vistor {
+
+}
