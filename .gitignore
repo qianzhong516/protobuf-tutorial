@@ -1,5 +1,6 @@
 .vscode
 .DS_Store
+*_output
 java/*
 !java/src
 !pom.xml

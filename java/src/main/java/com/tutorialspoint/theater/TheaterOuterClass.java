@@ -4,9 +4,7 @@
 package com.tutorialspoint.theater;
 
 public final class TheaterOuterClass {
-  private TheaterOuterClass() {
-  }
-
+  private TheaterOuterClass() {}
   public static void registerAllExtensions(
       com.google.protobuf.ExtensionRegistryLite registry) {
   }
@@ -16,40 +14,52 @@ public final class TheaterOuterClass {
     registerAllExtensions(
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
-
   public interface TheaterOrBuilder extends
       // @@protoc_insertion_point(interface_extends:tutorial.Theater)
       com.google.protobuf.MessageOrBuilder {
 
     /**
      * <code>string name = 1;</code>
-     * 
      * @return The name.
      */
     java.lang.String getName();
-
     /**
      * <code>string name = 1;</code>
-     * 
      * @return The bytes for name.
      */
-    com.google.protobuf.ByteString getNameBytes();
+    com.google.protobuf.ByteString
+        getNameBytes();
 
     /**
      * <code>string adderss = 2;</code>
-     * 
      * @return The adderss.
      */
     java.lang.String getAdderss();
-
     /**
      * <code>string adderss = 2;</code>
-     * 
      * @return The bytes for adderss.
      */
-    com.google.protobuf.ByteString getAdderssBytes();
-  }
+    com.google.protobuf.ByteString
+        getAdderssBytes();
 
+    /**
+     * <code>int32 total_capacity = 3;</code>
+     * @return The totalCapacity.
+     */
+    int getTotalCapacity();
+
+    /**
+     * <code>int64 mobile = 4;</code>
+     * @return The mobile.
+     */
+    long getMobile();
+
+    /**
+     * <code>float base_ticket_price = 5;</code>
+     * @return The baseTicketPrice.
+     */
+    float getBaseTicketPrice();
+  }
   /**
    * Protobuf type {@code tutorial.Theater}
    */
@@ -57,30 +67,28 @@ public final class TheaterOuterClass {
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:tutorial.Theater)
       TheaterOrBuilder {
-    private static final long serialVersionUID = 0L;
-
+  private static final long serialVersionUID = 0L;
     // Use Theater.newBuilder() to construct.
     private Theater(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-
     private Theater() {
       name_ = "";
       adderss_ = "";
     }
 
     @java.lang.Override
-    @SuppressWarnings({ "unused" })
+    @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(
         UnusedPrivateParameter unused) {
       return new Theater();
     }
 
     @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
       return this.unknownFields;
     }
-
     private Theater(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -89,7 +97,8 @@ public final class TheaterOuterClass {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields = com.google.protobuf.UnknownFieldSet.newBuilder();
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -108,6 +117,21 @@ public final class TheaterOuterClass {
               java.lang.String s = input.readStringRequireUtf8();
 
               adderss_ = s;
+              break;
+            }
+            case 24: {
+
+              totalCapacity_ = input.readInt32();
+              break;
+            }
+            case 32: {
+
+              mobile_ = input.readInt64();
+              break;
+            }
+            case 45: {
+
+              baseTicketPrice_ = input.readFloat();
               break;
             }
             default: {
@@ -129,25 +153,23 @@ public final class TheaterOuterClass {
         makeExtensionsImmutable();
       }
     }
-
-    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
       return com.tutorialspoint.theater.TheaterOuterClass.internal_static_tutorial_Theater_descriptor;
     }
 
     @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
       return com.tutorialspoint.theater.TheaterOuterClass.internal_static_tutorial_Theater_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.tutorialspoint.theater.TheaterOuterClass.Theater.class,
-              com.tutorialspoint.theater.TheaterOuterClass.Theater.Builder.class);
+              com.tutorialspoint.theater.TheaterOuterClass.Theater.class, com.tutorialspoint.theater.TheaterOuterClass.Theater.Builder.class);
     }
 
     public static final int NAME_FIELD_NUMBER = 1;
     private volatile java.lang.Object name_;
-
     /**
      * <code>string name = 1;</code>
-     * 
      * @return The name.
      */
     @java.lang.Override
@@ -156,24 +178,25 @@ public final class TheaterOuterClass {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         name_ = s;
         return s;
       }
     }
-
     /**
      * <code>string name = 1;</code>
-     * 
      * @return The bytes for name.
      */
     @java.lang.Override
-    public com.google.protobuf.ByteString getNameBytes() {
+    public com.google.protobuf.ByteString
+        getNameBytes() {
       java.lang.Object ref = name_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = com.google.protobuf.ByteString.copyFromUtf8(
-            (java.lang.String) ref);
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
         name_ = b;
         return b;
       } else {
@@ -183,10 +206,8 @@ public final class TheaterOuterClass {
 
     public static final int ADDERSS_FIELD_NUMBER = 2;
     private volatile java.lang.Object adderss_;
-
     /**
      * <code>string adderss = 2;</code>
-     * 
      * @return The adderss.
      */
     @java.lang.Override
@@ -195,24 +216,25 @@ public final class TheaterOuterClass {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         adderss_ = s;
         return s;
       }
     }
-
     /**
      * <code>string adderss = 2;</code>
-     * 
      * @return The bytes for adderss.
      */
     @java.lang.Override
-    public com.google.protobuf.ByteString getAdderssBytes() {
+    public com.google.protobuf.ByteString
+        getAdderssBytes() {
       java.lang.Object ref = adderss_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = com.google.protobuf.ByteString.copyFromUtf8(
-            (java.lang.String) ref);
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
         adderss_ = b;
         return b;
       } else {
@@ -220,15 +242,45 @@ public final class TheaterOuterClass {
       }
     }
 
-    private byte memoizedIsInitialized = -1;
+    public static final int TOTAL_CAPACITY_FIELD_NUMBER = 3;
+    private int totalCapacity_;
+    /**
+     * <code>int32 total_capacity = 3;</code>
+     * @return The totalCapacity.
+     */
+    @java.lang.Override
+    public int getTotalCapacity() {
+      return totalCapacity_;
+    }
 
+    public static final int MOBILE_FIELD_NUMBER = 4;
+    private long mobile_;
+    /**
+     * <code>int64 mobile = 4;</code>
+     * @return The mobile.
+     */
+    @java.lang.Override
+    public long getMobile() {
+      return mobile_;
+    }
+
+    public static final int BASE_TICKET_PRICE_FIELD_NUMBER = 5;
+    private float baseTicketPrice_;
+    /**
+     * <code>float base_ticket_price = 5;</code>
+     * @return The baseTicketPrice.
+     */
+    @java.lang.Override
+    public float getBaseTicketPrice() {
+      return baseTicketPrice_;
+    }
+
+    private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1)
-        return true;
-      if (isInitialized == 0)
-        return false;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
 
       memoizedIsInitialized = 1;
       return true;
@@ -236,12 +288,21 @@ public final class TheaterOuterClass {
 
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
-        throws java.io.IOException {
+                        throws java.io.IOException {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(adderss_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, adderss_);
+      }
+      if (totalCapacity_ != 0) {
+        output.writeInt32(3, totalCapacity_);
+      }
+      if (mobile_ != 0L) {
+        output.writeInt64(4, mobile_);
+      }
+      if (java.lang.Float.floatToRawIntBits(baseTicketPrice_) != 0) {
+        output.writeFloat(5, baseTicketPrice_);
       }
       unknownFields.writeTo(output);
     }
@@ -249,8 +310,7 @@ public final class TheaterOuterClass {
     @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
-      if (size != -1)
-        return size;
+      if (size != -1) return size;
 
       size = 0;
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
@@ -258,6 +318,18 @@ public final class TheaterOuterClass {
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(adderss_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, adderss_);
+      }
+      if (totalCapacity_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(3, totalCapacity_);
+      }
+      if (mobile_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(4, mobile_);
+      }
+      if (java.lang.Float.floatToRawIntBits(baseTicketPrice_) != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeFloatSize(5, baseTicketPrice_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -267,7 +339,7 @@ public final class TheaterOuterClass {
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
-        return true;
+       return true;
       }
       if (!(obj instanceof com.tutorialspoint.theater.TheaterOuterClass.Theater)) {
         return super.equals(obj);
@@ -275,13 +347,17 @@ public final class TheaterOuterClass {
       com.tutorialspoint.theater.TheaterOuterClass.Theater other = (com.tutorialspoint.theater.TheaterOuterClass.Theater) obj;
 
       if (!getName()
-          .equals(other.getName()))
-        return false;
+          .equals(other.getName())) return false;
       if (!getAdderss()
-          .equals(other.getAdderss()))
-        return false;
-      if (!unknownFields.equals(other.unknownFields))
-        return false;
+          .equals(other.getAdderss())) return false;
+      if (getTotalCapacity()
+          != other.getTotalCapacity()) return false;
+      if (getMobile()
+          != other.getMobile()) return false;
+      if (java.lang.Float.floatToIntBits(getBaseTicketPrice())
+          != java.lang.Float.floatToIntBits(
+              other.getBaseTicketPrice())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -296,6 +372,14 @@ public final class TheaterOuterClass {
       hash = (53 * hash) + getName().hashCode();
       hash = (37 * hash) + ADDERSS_FIELD_NUMBER;
       hash = (53 * hash) + getAdderss().hashCode();
+      hash = (37 * hash) + TOTAL_CAPACITY_FIELD_NUMBER;
+      hash = (53 * hash) + getTotalCapacity();
+      hash = (37 * hash) + MOBILE_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getMobile());
+      hash = (37 * hash) + BASE_TICKET_PRICE_FIELD_NUMBER;
+      hash = (53 * hash) + java.lang.Float.floatToIntBits(
+          getBaseTicketPrice());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -306,45 +390,38 @@ public final class TheaterOuterClass {
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-
     public static com.tutorialspoint.theater.TheaterOuterClass.Theater parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-
     public static com.tutorialspoint.theater.TheaterOuterClass.Theater parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-
     public static com.tutorialspoint.theater.TheaterOuterClass.Theater parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-
     public static com.tutorialspoint.theater.TheaterOuterClass.Theater parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-
     public static com.tutorialspoint.theater.TheaterOuterClass.Theater parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-
     public static com.tutorialspoint.theater.TheaterOuterClass.Theater parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-
     public static com.tutorialspoint.theater.TheaterOuterClass.Theater parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -352,13 +429,11 @@ public final class TheaterOuterClass {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-
     public static com.tutorialspoint.theater.TheaterOuterClass.Theater parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-
     public static com.tutorialspoint.theater.TheaterOuterClass.Theater parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -366,14 +441,12 @@ public final class TheaterOuterClass {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-
     public static com.tutorialspoint.theater.TheaterOuterClass.Theater parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-
     public static com.tutorialspoint.theater.TheaterOuterClass.Theater parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -383,23 +456,17 @@ public final class TheaterOuterClass {
     }
 
     @java.lang.Override
-    public Builder newBuilderForType() {
-      return newBuilder();
-    }
-
+    public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-
     public static Builder newBuilder(com.tutorialspoint.theater.TheaterOuterClass.Theater prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
-
     @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
-          ? new Builder()
-          : new Builder().mergeFrom(this);
+          ? new Builder() : new Builder().mergeFrom(this);
     }
 
     @java.lang.Override
@@ -408,7 +475,6 @@ public final class TheaterOuterClass {
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      * Protobuf type {@code tutorial.Theater}
      */
@@ -416,20 +482,20 @@ public final class TheaterOuterClass {
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:tutorial.Theater)
         com.tutorialspoint.theater.TheaterOuterClass.TheaterOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
         return com.tutorialspoint.theater.TheaterOuterClass.internal_static_tutorial_Theater_descriptor;
       }
 
       @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
         return com.tutorialspoint.theater.TheaterOuterClass.internal_static_tutorial_Theater_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.tutorialspoint.theater.TheaterOuterClass.Theater.class,
-                com.tutorialspoint.theater.TheaterOuterClass.Theater.Builder.class);
+                com.tutorialspoint.theater.TheaterOuterClass.Theater.class, com.tutorialspoint.theater.TheaterOuterClass.Theater.Builder.class);
       }
 
-      // Construct using
-      // com.tutorialspoint.greeting.TheaterOuterClass.Theater.newBuilder()
+      // Construct using com.tutorialspoint.theater.TheaterOuterClass.Theater.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -439,12 +505,11 @@ public final class TheaterOuterClass {
         super(parent);
         maybeForceBuilderInitialization();
       }
-
       private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
         }
       }
-
       @java.lang.Override
       public Builder clear() {
         super.clear();
@@ -452,11 +517,18 @@ public final class TheaterOuterClass {
 
         adderss_ = "";
 
+        totalCapacity_ = 0;
+
+        mobile_ = 0L;
+
+        baseTicketPrice_ = 0F;
+
         return this;
       }
 
       @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
         return com.tutorialspoint.theater.TheaterOuterClass.internal_static_tutorial_Theater_descriptor;
       }
 
@@ -476,10 +548,12 @@ public final class TheaterOuterClass {
 
       @java.lang.Override
       public com.tutorialspoint.theater.TheaterOuterClass.Theater buildPartial() {
-        com.tutorialspoint.theater.TheaterOuterClass.Theater result = new com.tutorialspoint.theater.TheaterOuterClass.Theater(
-            this);
+        com.tutorialspoint.theater.TheaterOuterClass.Theater result = new com.tutorialspoint.theater.TheaterOuterClass.Theater(this);
         result.name_ = name_;
         result.adderss_ = adderss_;
+        result.totalCapacity_ = totalCapacity_;
+        result.mobile_ = mobile_;
+        result.baseTicketPrice_ = baseTicketPrice_;
         onBuilt();
         return result;
       }
@@ -488,44 +562,38 @@ public final class TheaterOuterClass {
       public Builder clone() {
         return super.clone();
       }
-
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return super.setField(field, value);
       }
-
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return super.clearField(field);
       }
-
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return super.clearOneof(oneof);
       }
-
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
         return super.setRepeatedField(field, index, value);
       }
-
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return super.addRepeatedField(field, value);
       }
-
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof com.tutorialspoint.theater.TheaterOuterClass.Theater) {
-          return mergeFrom((com.tutorialspoint.theater.TheaterOuterClass.Theater) other);
+          return mergeFrom((com.tutorialspoint.theater.TheaterOuterClass.Theater)other);
         } else {
           super.mergeFrom(other);
           return this;
@@ -533,8 +601,7 @@ public final class TheaterOuterClass {
       }
 
       public Builder mergeFrom(com.tutorialspoint.theater.TheaterOuterClass.Theater other) {
-        if (other == com.tutorialspoint.theater.TheaterOuterClass.Theater.getDefaultInstance())
-          return this;
+        if (other == com.tutorialspoint.theater.TheaterOuterClass.Theater.getDefaultInstance()) return this;
         if (!other.getName().isEmpty()) {
           name_ = other.name_;
           onChanged();
@@ -542,6 +609,15 @@ public final class TheaterOuterClass {
         if (!other.getAdderss().isEmpty()) {
           adderss_ = other.adderss_;
           onChanged();
+        }
+        if (other.getTotalCapacity() != 0) {
+          setTotalCapacity(other.getTotalCapacity());
+        }
+        if (other.getMobile() != 0L) {
+          setMobile(other.getMobile());
+        }
+        if (other.getBaseTicketPrice() != 0F) {
+          setBaseTicketPrice(other.getBaseTicketPrice());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -573,16 +649,15 @@ public final class TheaterOuterClass {
       }
 
       private java.lang.Object name_ = "";
-
       /**
        * <code>string name = 1;</code>
-       * 
        * @return The name.
        */
       public java.lang.String getName() {
         java.lang.Object ref = name_;
         if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
           name_ = s;
           return s;
@@ -590,82 +665,75 @@ public final class TheaterOuterClass {
           return (java.lang.String) ref;
         }
       }
-
       /**
        * <code>string name = 1;</code>
-       * 
        * @return The bytes for name.
        */
-      public com.google.protobuf.ByteString getNameBytes() {
+      public com.google.protobuf.ByteString
+          getNameBytes() {
         java.lang.Object ref = name_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
           name_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        * <code>string name = 1;</code>
-       * 
        * @param value The name to set.
        * @return This builder for chaining.
        */
       public Builder setName(
           java.lang.String value) {
         if (value == null) {
-          throw new NullPointerException();
-        }
-
+    throw new NullPointerException();
+  }
+  
         name_ = value;
         onChanged();
         return this;
       }
-
       /**
        * <code>string name = 1;</code>
-       * 
        * @return This builder for chaining.
        */
       public Builder clearName() {
-
+        
         name_ = getDefaultInstance().getName();
         onChanged();
         return this;
       }
-
       /**
        * <code>string name = 1;</code>
-       * 
        * @param value The bytes for name to set.
        * @return This builder for chaining.
        */
       public Builder setNameBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
-          throw new NullPointerException();
-        }
-        checkByteStringIsUtf8(value);
-
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
         name_ = value;
         onChanged();
         return this;
       }
 
       private java.lang.Object adderss_ = "";
-
       /**
        * <code>string adderss = 2;</code>
-       * 
        * @return The adderss.
        */
       public java.lang.String getAdderss() {
         java.lang.Object ref = adderss_;
         if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
           adderss_ = s;
           return s;
@@ -673,71 +741,157 @@ public final class TheaterOuterClass {
           return (java.lang.String) ref;
         }
       }
-
       /**
        * <code>string adderss = 2;</code>
-       * 
        * @return The bytes for adderss.
        */
-      public com.google.protobuf.ByteString getAdderssBytes() {
+      public com.google.protobuf.ByteString
+          getAdderssBytes() {
         java.lang.Object ref = adderss_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
           adderss_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
-
       /**
        * <code>string adderss = 2;</code>
-       * 
        * @param value The adderss to set.
        * @return This builder for chaining.
        */
       public Builder setAdderss(
           java.lang.String value) {
         if (value == null) {
-          throw new NullPointerException();
-        }
-
+    throw new NullPointerException();
+  }
+  
         adderss_ = value;
         onChanged();
         return this;
       }
-
       /**
        * <code>string adderss = 2;</code>
-       * 
        * @return This builder for chaining.
        */
       public Builder clearAdderss() {
-
+        
         adderss_ = getDefaultInstance().getAdderss();
         onChanged();
         return this;
       }
-
       /**
        * <code>string adderss = 2;</code>
-       * 
        * @param value The bytes for adderss to set.
        * @return This builder for chaining.
        */
       public Builder setAdderssBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
-          throw new NullPointerException();
-        }
-        checkByteStringIsUtf8(value);
-
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
         adderss_ = value;
         onChanged();
         return this;
       }
 
+      private int totalCapacity_ ;
+      /**
+       * <code>int32 total_capacity = 3;</code>
+       * @return The totalCapacity.
+       */
+      @java.lang.Override
+      public int getTotalCapacity() {
+        return totalCapacity_;
+      }
+      /**
+       * <code>int32 total_capacity = 3;</code>
+       * @param value The totalCapacity to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTotalCapacity(int value) {
+        
+        totalCapacity_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 total_capacity = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTotalCapacity() {
+        
+        totalCapacity_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private long mobile_ ;
+      /**
+       * <code>int64 mobile = 4;</code>
+       * @return The mobile.
+       */
+      @java.lang.Override
+      public long getMobile() {
+        return mobile_;
+      }
+      /**
+       * <code>int64 mobile = 4;</code>
+       * @param value The mobile to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMobile(long value) {
+        
+        mobile_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int64 mobile = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearMobile() {
+        
+        mobile_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private float baseTicketPrice_ ;
+      /**
+       * <code>float base_ticket_price = 5;</code>
+       * @return The baseTicketPrice.
+       */
+      @java.lang.Override
+      public float getBaseTicketPrice() {
+        return baseTicketPrice_;
+      }
+      /**
+       * <code>float base_ticket_price = 5;</code>
+       * @param value The baseTicketPrice to set.
+       * @return This builder for chaining.
+       */
+      public Builder setBaseTicketPrice(float value) {
+        
+        baseTicketPrice_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>float base_ticket_price = 5;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearBaseTicketPrice() {
+        
+        baseTicketPrice_ = 0F;
+        onChanged();
+        return this;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -749,6 +903,7 @@ public final class TheaterOuterClass {
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
       }
+
 
       // @@protoc_insertion_point(builder_scope:tutorial.Theater)
     }
@@ -763,7 +918,8 @@ public final class TheaterOuterClass {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<Theater> PARSER = new com.google.protobuf.AbstractParser<Theater>() {
+    private static final com.google.protobuf.Parser<Theater>
+        PARSER = new com.google.protobuf.AbstractParser<Theater>() {
       @java.lang.Override
       public Theater parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
@@ -793,7 +949,6 @@ public final class TheaterOuterClass {
       // @@protoc_insertion_point(interface_extends:tutorial.Vistor)
       com.google.protobuf.MessageOrBuilder {
   }
-
   /**
    * Protobuf type {@code tutorial.Vistor}
    */
@@ -801,28 +956,26 @@ public final class TheaterOuterClass {
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:tutorial.Vistor)
       VistorOrBuilder {
-    private static final long serialVersionUID = 0L;
-
+  private static final long serialVersionUID = 0L;
     // Use Vistor.newBuilder() to construct.
     private Vistor(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-
     private Vistor() {
     }
 
     @java.lang.Override
-    @SuppressWarnings({ "unused" })
+    @SuppressWarnings({"unused"})
     protected java.lang.Object newInstance(
         UnusedPrivateParameter unused) {
       return new Vistor();
     }
 
     @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
       return this.unknownFields;
     }
-
     private Vistor(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -831,7 +984,8 @@ public final class TheaterOuterClass {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields = com.google.protobuf.UnknownFieldSet.newBuilder();
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -859,28 +1013,25 @@ public final class TheaterOuterClass {
         makeExtensionsImmutable();
       }
     }
-
-    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
       return com.tutorialspoint.theater.TheaterOuterClass.internal_static_tutorial_Vistor_descriptor;
     }
 
     @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
       return com.tutorialspoint.theater.TheaterOuterClass.internal_static_tutorial_Vistor_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.tutorialspoint.theater.TheaterOuterClass.Vistor.class,
-              com.tutorialspoint.theater.TheaterOuterClass.Vistor.Builder.class);
+              com.tutorialspoint.theater.TheaterOuterClass.Vistor.class, com.tutorialspoint.theater.TheaterOuterClass.Vistor.Builder.class);
     }
 
     private byte memoizedIsInitialized = -1;
-
     @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1)
-        return true;
-      if (isInitialized == 0)
-        return false;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
 
       memoizedIsInitialized = 1;
       return true;
@@ -888,15 +1039,14 @@ public final class TheaterOuterClass {
 
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
-        throws java.io.IOException {
+                        throws java.io.IOException {
       unknownFields.writeTo(output);
     }
 
     @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
-      if (size != -1)
-        return size;
+      if (size != -1) return size;
 
       size = 0;
       size += unknownFields.getSerializedSize();
@@ -907,15 +1057,14 @@ public final class TheaterOuterClass {
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
-        return true;
+       return true;
       }
       if (!(obj instanceof com.tutorialspoint.theater.TheaterOuterClass.Vistor)) {
         return super.equals(obj);
       }
       com.tutorialspoint.theater.TheaterOuterClass.Vistor other = (com.tutorialspoint.theater.TheaterOuterClass.Vistor) obj;
 
-      if (!unknownFields.equals(other.unknownFields))
-        return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
 
@@ -936,45 +1085,38 @@ public final class TheaterOuterClass {
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-
     public static com.tutorialspoint.theater.TheaterOuterClass.Vistor parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-
     public static com.tutorialspoint.theater.TheaterOuterClass.Vistor parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-
     public static com.tutorialspoint.theater.TheaterOuterClass.Vistor parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-
     public static com.tutorialspoint.theater.TheaterOuterClass.Vistor parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-
     public static com.tutorialspoint.theater.TheaterOuterClass.Vistor parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-
     public static com.tutorialspoint.theater.TheaterOuterClass.Vistor parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-
     public static com.tutorialspoint.theater.TheaterOuterClass.Vistor parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -982,13 +1124,11 @@ public final class TheaterOuterClass {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-
     public static com.tutorialspoint.theater.TheaterOuterClass.Vistor parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-
     public static com.tutorialspoint.theater.TheaterOuterClass.Vistor parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -996,14 +1136,12 @@ public final class TheaterOuterClass {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-
     public static com.tutorialspoint.theater.TheaterOuterClass.Vistor parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-
     public static com.tutorialspoint.theater.TheaterOuterClass.Vistor parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -1013,23 +1151,17 @@ public final class TheaterOuterClass {
     }
 
     @java.lang.Override
-    public Builder newBuilderForType() {
-      return newBuilder();
-    }
-
+    public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-
     public static Builder newBuilder(com.tutorialspoint.theater.TheaterOuterClass.Vistor prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
-
     @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
-          ? new Builder()
-          : new Builder().mergeFrom(this);
+          ? new Builder() : new Builder().mergeFrom(this);
     }
 
     @java.lang.Override
@@ -1038,7 +1170,6 @@ public final class TheaterOuterClass {
       Builder builder = new Builder(parent);
       return builder;
     }
-
     /**
      * Protobuf type {@code tutorial.Vistor}
      */
@@ -1046,20 +1177,20 @@ public final class TheaterOuterClass {
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:tutorial.Vistor)
         com.tutorialspoint.theater.TheaterOuterClass.VistorOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
         return com.tutorialspoint.theater.TheaterOuterClass.internal_static_tutorial_Vistor_descriptor;
       }
 
       @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable internalGetFieldAccessorTable() {
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
         return com.tutorialspoint.theater.TheaterOuterClass.internal_static_tutorial_Vistor_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.tutorialspoint.theater.TheaterOuterClass.Vistor.class,
-                com.tutorialspoint.theater.TheaterOuterClass.Vistor.Builder.class);
+                com.tutorialspoint.theater.TheaterOuterClass.Vistor.class, com.tutorialspoint.theater.TheaterOuterClass.Vistor.Builder.class);
       }
 
-      // Construct using
-      // com.tutorialspoint.greeting.TheaterOuterClass.Vistor.newBuilder()
+      // Construct using com.tutorialspoint.theater.TheaterOuterClass.Vistor.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -1069,12 +1200,11 @@ public final class TheaterOuterClass {
         super(parent);
         maybeForceBuilderInitialization();
       }
-
       private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
         }
       }
-
       @java.lang.Override
       public Builder clear() {
         super.clear();
@@ -1082,7 +1212,8 @@ public final class TheaterOuterClass {
       }
 
       @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
         return com.tutorialspoint.theater.TheaterOuterClass.internal_static_tutorial_Vistor_descriptor;
       }
 
@@ -1102,8 +1233,7 @@ public final class TheaterOuterClass {
 
       @java.lang.Override
       public com.tutorialspoint.theater.TheaterOuterClass.Vistor buildPartial() {
-        com.tutorialspoint.theater.TheaterOuterClass.Vistor result = new com.tutorialspoint.theater.TheaterOuterClass.Vistor(
-            this);
+        com.tutorialspoint.theater.TheaterOuterClass.Vistor result = new com.tutorialspoint.theater.TheaterOuterClass.Vistor(this);
         onBuilt();
         return result;
       }
@@ -1112,44 +1242,38 @@ public final class TheaterOuterClass {
       public Builder clone() {
         return super.clone();
       }
-
       @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return super.setField(field, value);
       }
-
       @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return super.clearField(field);
       }
-
       @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return super.clearOneof(oneof);
       }
-
       @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           int index, java.lang.Object value) {
         return super.setRepeatedField(field, index, value);
       }
-
       @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
           java.lang.Object value) {
         return super.addRepeatedField(field, value);
       }
-
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof com.tutorialspoint.theater.TheaterOuterClass.Vistor) {
-          return mergeFrom((com.tutorialspoint.theater.TheaterOuterClass.Vistor) other);
+          return mergeFrom((com.tutorialspoint.theater.TheaterOuterClass.Vistor)other);
         } else {
           super.mergeFrom(other);
           return this;
@@ -1157,8 +1281,7 @@ public final class TheaterOuterClass {
       }
 
       public Builder mergeFrom(com.tutorialspoint.theater.TheaterOuterClass.Vistor other) {
-        if (other == com.tutorialspoint.theater.TheaterOuterClass.Vistor.getDefaultInstance())
-          return this;
+        if (other == com.tutorialspoint.theater.TheaterOuterClass.Vistor.getDefaultInstance()) return this;
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -1187,7 +1310,6 @@ public final class TheaterOuterClass {
         }
         return this;
       }
-
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -1199,6 +1321,7 @@ public final class TheaterOuterClass {
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
       }
+
 
       // @@protoc_insertion_point(builder_scope:tutorial.Vistor)
     }
@@ -1213,7 +1336,8 @@ public final class TheaterOuterClass {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<Vistor> PARSER = new com.google.protobuf.AbstractParser<Vistor>() {
+    private static final com.google.protobuf.Parser<Vistor>
+        PARSER = new com.google.protobuf.AbstractParser<Vistor>() {
       @java.lang.Override
       public Vistor parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
@@ -1239,35 +1363,47 @@ public final class TheaterOuterClass {
 
   }
 
-  private static final com.google.protobuf.Descriptors.Descriptor internal_static_tutorial_Theater_descriptor;
-  private static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable internal_static_tutorial_Theater_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor internal_static_tutorial_Vistor_descriptor;
-  private static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable internal_static_tutorial_Vistor_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_tutorial_Theater_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_tutorial_Theater_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_tutorial_Vistor_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_tutorial_Vistor_fieldAccessorTable;
 
-  public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
+  public static com.google.protobuf.Descriptors.FileDescriptor
+      getDescriptor() {
     return descriptor;
   }
-
-  private static com.google.protobuf.Descriptors.FileDescriptor descriptor;
+  private static  com.google.protobuf.Descriptors.FileDescriptor
+      descriptor;
   static {
     java.lang.String[] descriptorData = {
-        "\n\031proto_files/theater.proto\022\010tutorial\"(\n" +
-            "\007Theater\022\014\n\004name\030\001 \001(\t\022\017\n\007adderss\030\002 \001(\t\"" +
-            "\010\n\006VistorB\035\n\033com.tutorialspoint.greeting" +
-            "b\006proto3"
+      "\n\031proto_files/theater.proto\022\010tutorial\"k\n" +
+      "\007Theater\022\014\n\004name\030\001 \001(\t\022\017\n\007adderss\030\002 \001(\t\022" +
+      "\026\n\016total_capacity\030\003 \001(\005\022\016\n\006mobile\030\004 \001(\003\022" +
+      "\031\n\021base_ticket_price\030\005 \001(\002\"\010\n\006VistorB\034\n\032" +
+      "com.tutorialspoint.theaterb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
-        .internalBuildGeneratedFileFrom(descriptorData,
-            new com.google.protobuf.Descriptors.FileDescriptor[] {
-            });
-    internal_static_tutorial_Theater_descriptor = getDescriptor().getMessageTypes().get(0);
-    internal_static_tutorial_Theater_fieldAccessorTable = new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+      .internalBuildGeneratedFileFrom(descriptorData,
+        new com.google.protobuf.Descriptors.FileDescriptor[] {
+        });
+    internal_static_tutorial_Theater_descriptor =
+      getDescriptor().getMessageTypes().get(0);
+    internal_static_tutorial_Theater_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_tutorial_Theater_descriptor,
-        new java.lang.String[] { "Name", "Adderss", });
-    internal_static_tutorial_Vistor_descriptor = getDescriptor().getMessageTypes().get(1);
-    internal_static_tutorial_Vistor_fieldAccessorTable = new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        new java.lang.String[] { "Name", "Adderss", "TotalCapacity", "Mobile", "BaseTicketPrice", });
+    internal_static_tutorial_Vistor_descriptor =
+      getDescriptor().getMessageTypes().get(1);
+    internal_static_tutorial_Vistor_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_tutorial_Vistor_descriptor,
-        new java.lang.String[] {});
+        new java.lang.String[] { });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

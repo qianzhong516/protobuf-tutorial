@@ -10,6 +10,9 @@ public class TheaterWriter {
         Theater theater = Theater.newBuilder()
                 .setName("Janice Zhong")
                 .setAdderss("1, Beauty Street, NSW, Australia")
+                .setTotalCapacity(320)
+                .setMobile(98234567189L)
+                .setBaseTicketPrice(22.45f)
                 .build();
 
         String filename = "theater_protobuf_output";
