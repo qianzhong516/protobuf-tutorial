@@ -59,6 +59,48 @@ public final class TheaterOuterClass {
      * @return The baseTicketPrice.
      */
     float getBaseTicketPrice();
+
+    /**
+     * <code>bool drive_in = 6;</code>
+     * @return The driveIn.
+     */
+    boolean getDriveIn();
+
+    /**
+     * <code>.tutorial.Theater.PAYMENT_SYSTEM payment = 7;</code>
+     * @return The enum numeric value on the wire for payment.
+     */
+    int getPaymentValue();
+    /**
+     * <code>.tutorial.Theater.PAYMENT_SYSTEM payment = 7;</code>
+     * @return The payment.
+     */
+    com.tutorialspoint.theater.TheaterOuterClass.Theater.PAYMENT_SYSTEM getPayment();
+
+    /**
+     * <code>repeated string snacks = 8;</code>
+     * @return A list containing the snacks.
+     */
+    java.util.List<java.lang.String>
+        getSnacksList();
+    /**
+     * <code>repeated string snacks = 8;</code>
+     * @return The count of snacks.
+     */
+    int getSnacksCount();
+    /**
+     * <code>repeated string snacks = 8;</code>
+     * @param index The index of the element to return.
+     * @return The snacks at the given index.
+     */
+    java.lang.String getSnacks(int index);
+    /**
+     * <code>repeated string snacks = 8;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the snacks at the given index.
+     */
+    com.google.protobuf.ByteString
+        getSnacksBytes(int index);
   }
   /**
    * Protobuf type {@code tutorial.Theater}
@@ -75,6 +117,8 @@ public final class TheaterOuterClass {
     private Theater() {
       name_ = "";
       adderss_ = "";
+      payment_ = 0;
+      snacks_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     }
 
     @java.lang.Override
@@ -97,6 +141,7 @@ public final class TheaterOuterClass {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
+      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -134,6 +179,26 @@ public final class TheaterOuterClass {
               baseTicketPrice_ = input.readFloat();
               break;
             }
+            case 48: {
+
+              driveIn_ = input.readBool();
+              break;
+            }
+            case 56: {
+              int rawValue = input.readEnum();
+
+              payment_ = rawValue;
+              break;
+            }
+            case 66: {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                snacks_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              snacks_.add(s);
+              break;
+            }
             default: {
               if (!parseUnknownField(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -149,6 +214,9 @@ public final class TheaterOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        if (((mutable_bitField0_ & 0x00000001) != 0)) {
+          snacks_ = snacks_.getUnmodifiableView();
+        }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
@@ -164,6 +232,132 @@ public final class TheaterOuterClass {
       return com.tutorialspoint.theater.TheaterOuterClass.internal_static_tutorial_Theater_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.tutorialspoint.theater.TheaterOuterClass.Theater.class, com.tutorialspoint.theater.TheaterOuterClass.Theater.Builder.class);
+    }
+
+    /**
+     * Protobuf enum {@code tutorial.Theater.PAYMENT_SYSTEM}
+     */
+    public enum PAYMENT_SYSTEM
+        implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       * <code>CASH = 0;</code>
+       */
+      CASH(0),
+      /**
+       * <code>CREDIT_CARD = 1;</code>
+       */
+      CREDIT_CARD(1),
+      /**
+       * <code>DEBIT_CARD = 2;</code>
+       */
+      DEBIT_CARD(2),
+      /**
+       * <code>APP = 3;</code>
+       */
+      APP(3),
+      UNRECOGNIZED(-1),
+      ;
+
+      /**
+       * <code>CASH = 0;</code>
+       */
+      public static final int CASH_VALUE = 0;
+      /**
+       * <code>CREDIT_CARD = 1;</code>
+       */
+      public static final int CREDIT_CARD_VALUE = 1;
+      /**
+       * <code>DEBIT_CARD = 2;</code>
+       */
+      public static final int DEBIT_CARD_VALUE = 2;
+      /**
+       * <code>APP = 3;</code>
+       */
+      public static final int APP_VALUE = 3;
+
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static PAYMENT_SYSTEM valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static PAYMENT_SYSTEM forNumber(int value) {
+        switch (value) {
+          case 0: return CASH;
+          case 1: return CREDIT_CARD;
+          case 2: return DEBIT_CARD;
+          case 3: return APP;
+          default: return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<PAYMENT_SYSTEM>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+      private static final com.google.protobuf.Internal.EnumLiteMap<
+          PAYMENT_SYSTEM> internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<PAYMENT_SYSTEM>() {
+              public PAYMENT_SYSTEM findValueByNumber(int number) {
+                return PAYMENT_SYSTEM.forNumber(number);
+              }
+            };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor
+          getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(ordinal());
+      }
+      public final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptorForType() {
+        return getDescriptor();
+      }
+      public static final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptor() {
+        return com.tutorialspoint.theater.TheaterOuterClass.Theater.getDescriptor().getEnumTypes().get(0);
+      }
+
+      private static final PAYMENT_SYSTEM[] VALUES = values();
+
+      public static PAYMENT_SYSTEM valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException(
+            "EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private PAYMENT_SYSTEM(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:tutorial.Theater.PAYMENT_SYSTEM)
     }
 
     public static final int NAME_FIELD_NUMBER = 1;
@@ -275,6 +469,71 @@ public final class TheaterOuterClass {
       return baseTicketPrice_;
     }
 
+    public static final int DRIVE_IN_FIELD_NUMBER = 6;
+    private boolean driveIn_;
+    /**
+     * <code>bool drive_in = 6;</code>
+     * @return The driveIn.
+     */
+    @java.lang.Override
+    public boolean getDriveIn() {
+      return driveIn_;
+    }
+
+    public static final int PAYMENT_FIELD_NUMBER = 7;
+    private int payment_;
+    /**
+     * <code>.tutorial.Theater.PAYMENT_SYSTEM payment = 7;</code>
+     * @return The enum numeric value on the wire for payment.
+     */
+    @java.lang.Override public int getPaymentValue() {
+      return payment_;
+    }
+    /**
+     * <code>.tutorial.Theater.PAYMENT_SYSTEM payment = 7;</code>
+     * @return The payment.
+     */
+    @java.lang.Override public com.tutorialspoint.theater.TheaterOuterClass.Theater.PAYMENT_SYSTEM getPayment() {
+      @SuppressWarnings("deprecation")
+      com.tutorialspoint.theater.TheaterOuterClass.Theater.PAYMENT_SYSTEM result = com.tutorialspoint.theater.TheaterOuterClass.Theater.PAYMENT_SYSTEM.valueOf(payment_);
+      return result == null ? com.tutorialspoint.theater.TheaterOuterClass.Theater.PAYMENT_SYSTEM.UNRECOGNIZED : result;
+    }
+
+    public static final int SNACKS_FIELD_NUMBER = 8;
+    private com.google.protobuf.LazyStringList snacks_;
+    /**
+     * <code>repeated string snacks = 8;</code>
+     * @return A list containing the snacks.
+     */
+    public com.google.protobuf.ProtocolStringList
+        getSnacksList() {
+      return snacks_;
+    }
+    /**
+     * <code>repeated string snacks = 8;</code>
+     * @return The count of snacks.
+     */
+    public int getSnacksCount() {
+      return snacks_.size();
+    }
+    /**
+     * <code>repeated string snacks = 8;</code>
+     * @param index The index of the element to return.
+     * @return The snacks at the given index.
+     */
+    public java.lang.String getSnacks(int index) {
+      return snacks_.get(index);
+    }
+    /**
+     * <code>repeated string snacks = 8;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the snacks at the given index.
+     */
+    public com.google.protobuf.ByteString
+        getSnacksBytes(int index) {
+      return snacks_.getByteString(index);
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -304,6 +563,15 @@ public final class TheaterOuterClass {
       if (java.lang.Float.floatToRawIntBits(baseTicketPrice_) != 0) {
         output.writeFloat(5, baseTicketPrice_);
       }
+      if (driveIn_ != false) {
+        output.writeBool(6, driveIn_);
+      }
+      if (payment_ != com.tutorialspoint.theater.TheaterOuterClass.Theater.PAYMENT_SYSTEM.CASH.getNumber()) {
+        output.writeEnum(7, payment_);
+      }
+      for (int i = 0; i < snacks_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 8, snacks_.getRaw(i));
+      }
       unknownFields.writeTo(output);
     }
 
@@ -331,6 +599,22 @@ public final class TheaterOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeFloatSize(5, baseTicketPrice_);
       }
+      if (driveIn_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(6, driveIn_);
+      }
+      if (payment_ != com.tutorialspoint.theater.TheaterOuterClass.Theater.PAYMENT_SYSTEM.CASH.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(7, payment_);
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < snacks_.size(); i++) {
+          dataSize += computeStringSizeNoTag(snacks_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getSnacksList().size();
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -357,6 +641,11 @@ public final class TheaterOuterClass {
       if (java.lang.Float.floatToIntBits(getBaseTicketPrice())
           != java.lang.Float.floatToIntBits(
               other.getBaseTicketPrice())) return false;
+      if (getDriveIn()
+          != other.getDriveIn()) return false;
+      if (payment_ != other.payment_) return false;
+      if (!getSnacksList()
+          .equals(other.getSnacksList())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -380,6 +669,15 @@ public final class TheaterOuterClass {
       hash = (37 * hash) + BASE_TICKET_PRICE_FIELD_NUMBER;
       hash = (53 * hash) + java.lang.Float.floatToIntBits(
           getBaseTicketPrice());
+      hash = (37 * hash) + DRIVE_IN_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getDriveIn());
+      hash = (37 * hash) + PAYMENT_FIELD_NUMBER;
+      hash = (53 * hash) + payment_;
+      if (getSnacksCount() > 0) {
+        hash = (37 * hash) + SNACKS_FIELD_NUMBER;
+        hash = (53 * hash) + getSnacksList().hashCode();
+      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -523,6 +821,12 @@ public final class TheaterOuterClass {
 
         baseTicketPrice_ = 0F;
 
+        driveIn_ = false;
+
+        payment_ = 0;
+
+        snacks_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
@@ -549,11 +853,19 @@ public final class TheaterOuterClass {
       @java.lang.Override
       public com.tutorialspoint.theater.TheaterOuterClass.Theater buildPartial() {
         com.tutorialspoint.theater.TheaterOuterClass.Theater result = new com.tutorialspoint.theater.TheaterOuterClass.Theater(this);
+        int from_bitField0_ = bitField0_;
         result.name_ = name_;
         result.adderss_ = adderss_;
         result.totalCapacity_ = totalCapacity_;
         result.mobile_ = mobile_;
         result.baseTicketPrice_ = baseTicketPrice_;
+        result.driveIn_ = driveIn_;
+        result.payment_ = payment_;
+        if (((bitField0_ & 0x00000001) != 0)) {
+          snacks_ = snacks_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        }
+        result.snacks_ = snacks_;
         onBuilt();
         return result;
       }
@@ -619,6 +931,22 @@ public final class TheaterOuterClass {
         if (other.getBaseTicketPrice() != 0F) {
           setBaseTicketPrice(other.getBaseTicketPrice());
         }
+        if (other.getDriveIn() != false) {
+          setDriveIn(other.getDriveIn());
+        }
+        if (other.payment_ != 0) {
+          setPaymentValue(other.getPaymentValue());
+        }
+        if (!other.snacks_.isEmpty()) {
+          if (snacks_.isEmpty()) {
+            snacks_ = other.snacks_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+          } else {
+            ensureSnacksIsMutable();
+            snacks_.addAll(other.snacks_);
+          }
+          onChanged();
+        }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -647,6 +975,7 @@ public final class TheaterOuterClass {
         }
         return this;
       }
+      private int bitField0_;
 
       private java.lang.Object name_ = "";
       /**
@@ -889,6 +1218,201 @@ public final class TheaterOuterClass {
       public Builder clearBaseTicketPrice() {
         
         baseTicketPrice_ = 0F;
+        onChanged();
+        return this;
+      }
+
+      private boolean driveIn_ ;
+      /**
+       * <code>bool drive_in = 6;</code>
+       * @return The driveIn.
+       */
+      @java.lang.Override
+      public boolean getDriveIn() {
+        return driveIn_;
+      }
+      /**
+       * <code>bool drive_in = 6;</code>
+       * @param value The driveIn to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDriveIn(boolean value) {
+        
+        driveIn_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool drive_in = 6;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearDriveIn() {
+        
+        driveIn_ = false;
+        onChanged();
+        return this;
+      }
+
+      private int payment_ = 0;
+      /**
+       * <code>.tutorial.Theater.PAYMENT_SYSTEM payment = 7;</code>
+       * @return The enum numeric value on the wire for payment.
+       */
+      @java.lang.Override public int getPaymentValue() {
+        return payment_;
+      }
+      /**
+       * <code>.tutorial.Theater.PAYMENT_SYSTEM payment = 7;</code>
+       * @param value The enum numeric value on the wire for payment to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPaymentValue(int value) {
+        
+        payment_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.tutorial.Theater.PAYMENT_SYSTEM payment = 7;</code>
+       * @return The payment.
+       */
+      @java.lang.Override
+      public com.tutorialspoint.theater.TheaterOuterClass.Theater.PAYMENT_SYSTEM getPayment() {
+        @SuppressWarnings("deprecation")
+        com.tutorialspoint.theater.TheaterOuterClass.Theater.PAYMENT_SYSTEM result = com.tutorialspoint.theater.TheaterOuterClass.Theater.PAYMENT_SYSTEM.valueOf(payment_);
+        return result == null ? com.tutorialspoint.theater.TheaterOuterClass.Theater.PAYMENT_SYSTEM.UNRECOGNIZED : result;
+      }
+      /**
+       * <code>.tutorial.Theater.PAYMENT_SYSTEM payment = 7;</code>
+       * @param value The payment to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPayment(com.tutorialspoint.theater.TheaterOuterClass.Theater.PAYMENT_SYSTEM value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        payment_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.tutorial.Theater.PAYMENT_SYSTEM payment = 7;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearPayment() {
+        
+        payment_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.LazyStringList snacks_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      private void ensureSnacksIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          snacks_ = new com.google.protobuf.LazyStringArrayList(snacks_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+      /**
+       * <code>repeated string snacks = 8;</code>
+       * @return A list containing the snacks.
+       */
+      public com.google.protobuf.ProtocolStringList
+          getSnacksList() {
+        return snacks_.getUnmodifiableView();
+      }
+      /**
+       * <code>repeated string snacks = 8;</code>
+       * @return The count of snacks.
+       */
+      public int getSnacksCount() {
+        return snacks_.size();
+      }
+      /**
+       * <code>repeated string snacks = 8;</code>
+       * @param index The index of the element to return.
+       * @return The snacks at the given index.
+       */
+      public java.lang.String getSnacks(int index) {
+        return snacks_.get(index);
+      }
+      /**
+       * <code>repeated string snacks = 8;</code>
+       * @param index The index of the value to return.
+       * @return The bytes of the snacks at the given index.
+       */
+      public com.google.protobuf.ByteString
+          getSnacksBytes(int index) {
+        return snacks_.getByteString(index);
+      }
+      /**
+       * <code>repeated string snacks = 8;</code>
+       * @param index The index to set the value at.
+       * @param value The snacks to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSnacks(
+          int index, java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureSnacksIsMutable();
+        snacks_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string snacks = 8;</code>
+       * @param value The snacks to add.
+       * @return This builder for chaining.
+       */
+      public Builder addSnacks(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureSnacksIsMutable();
+        snacks_.add(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string snacks = 8;</code>
+       * @param values The snacks to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllSnacks(
+          java.lang.Iterable<java.lang.String> values) {
+        ensureSnacksIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, snacks_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string snacks = 8;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearSnacks() {
+        snacks_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string snacks = 8;</code>
+       * @param value The bytes of the snacks to add.
+       * @return This builder for chaining.
+       */
+      public Builder addSnacksBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        ensureSnacksIsMutable();
+        snacks_.add(value);
         onChanged();
         return this;
       }
@@ -1382,11 +1906,15 @@ public final class TheaterOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\031proto_files/theater.proto\022\010tutorial\"k\n" +
-      "\007Theater\022\014\n\004name\030\001 \001(\t\022\017\n\007adderss\030\002 \001(\t\022" +
-      "\026\n\016total_capacity\030\003 \001(\005\022\016\n\006mobile\030\004 \001(\003\022" +
-      "\031\n\021base_ticket_price\030\005 \001(\002\"\010\n\006VistorB\034\n\032" +
-      "com.tutorialspoint.theaterb\006proto3"
+      "\n\031proto_files/theater.proto\022\010tutorial\"\206\002" +
+      "\n\007Theater\022\014\n\004name\030\001 \001(\t\022\017\n\007adderss\030\002 \001(\t" +
+      "\022\026\n\016total_capacity\030\003 \001(\005\022\016\n\006mobile\030\004 \001(\003" +
+      "\022\031\n\021base_ticket_price\030\005 \001(\002\022\020\n\010drive_in\030" +
+      "\006 \001(\010\0221\n\007payment\030\007 \001(\0162 .tutorial.Theate" +
+      "r.PAYMENT_SYSTEM\022\016\n\006snacks\030\010 \003(\t\"D\n\016PAYM" +
+      "ENT_SYSTEM\022\010\n\004CASH\020\000\022\017\n\013CREDIT_CARD\020\001\022\016\n" +
+      "\nDEBIT_CARD\020\002\022\007\n\003APP\020\003\"\010\n\006VistorB\034\n\032com." +
+      "tutorialspoint.theaterb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -1397,7 +1925,7 @@ public final class TheaterOuterClass {
     internal_static_tutorial_Theater_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_tutorial_Theater_descriptor,
-        new java.lang.String[] { "Name", "Adderss", "TotalCapacity", "Mobile", "BaseTicketPrice", });
+        new java.lang.String[] { "Name", "Adderss", "TotalCapacity", "Mobile", "BaseTicketPrice", "DriveIn", "Payment", "Snacks", });
     internal_static_tutorial_Vistor_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_tutorial_Vistor_fieldAccessorTable = new
